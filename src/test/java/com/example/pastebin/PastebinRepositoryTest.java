@@ -34,8 +34,6 @@ class PastebinRepositoryTest {
         Optional<Paste> optionalPaste = underTest.findByAuthor("Test1");
         assertThat(optionalPaste)
                 .isPresent()
-                .hasValueSatisfying(c -> {
-                    assertThat(c).isEqualToComparingFieldByField(paste);
-                });
+                .hasValueSatisfying(c -> assertThat(c).isEqualToComparingFieldByField(paste));
     }
 }

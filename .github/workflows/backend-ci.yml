@@ -9,12 +9,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/setup-java@v3
         with:
-        distribution: 'temurin'
-        java-version: '17'
-        cache: 'maven'
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'maven'
       - name: Build and run Unit/Integration Tests with Maven
         run: mvn -ntp -B verify
