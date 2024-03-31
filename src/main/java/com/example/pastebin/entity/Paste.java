@@ -1,15 +1,18 @@
 package com.example.pastebin.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
+import java.util.UUID;
+
 @Entity
 public class Paste {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private UUID id;
 
     @Column(nullable = false)
     @Size(min = 2, max = 255, message = "Min 2, Max 255")
@@ -39,4 +42,17 @@ public class Paste {
     @NotEmpty(message = "Field is mandatory")
     @NotBlank(message = "Field is mandatory")
     private DateStamp stamp;
+
+    public Paste(UUID id, String author, String title, Language language, String text, DateStamp stamp) {
+        this.id = id;
+        this.author = author;
+        this.title = title;
+        this.language = language;
+        this.text = text;
+        this.stamp = stamp;
+    }
+
+    public Paste() {
+
+    }
 }
