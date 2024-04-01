@@ -27,9 +27,9 @@ public class Pastebin {
     private String title;
 
     @Column(nullable = false)
-   // @Size(min = 2, max = 255, message = "Min 2, Max 255")
-    //@NotEmpty(message = "Field is mandatory")
-    //@NotBlank(message = "Field is mandatory")
+    @Size(min = 2, max = 255, message = "Min 2, Max 255")
+    @NotEmpty(message = "Field is mandatory")
+    @NotBlank(message = "Field is mandatory")
     private Language language;
 
     @Column(nullable = false)
@@ -39,8 +39,8 @@ public class Pastebin {
     private String text;
 
     @Column(nullable = false)
-    //@NotEmpty(message = "Field is mandatory")
-    //@NotBlank(message = "Field is mandatory")
+    @NotEmpty(message = "Field is mandatory")
+    @NotBlank(message = "Field is mandatory")
     private DateStamp stamp;
 
     public Pastebin(UUID id, String author, String title, Language language, String text, DateStamp stamp) {
@@ -54,53 +54,5 @@ public class Pastebin {
 
     public Pastebin() {
 
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public Language getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(Language language) {
-        this.language = language;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public DateStamp getStamp() {
-        return stamp;
-    }
-
-    public void setStamp(DateStamp stamp) {
-        this.stamp = stamp;
     }
 }
