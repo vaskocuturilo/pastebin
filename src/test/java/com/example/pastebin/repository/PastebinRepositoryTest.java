@@ -1,9 +1,8 @@
-package com.example.pastebin;
+package com.example.pastebin.repository;
 
 import com.example.pastebin.entity.DateStamp;
 import com.example.pastebin.entity.Language;
 import com.example.pastebin.entity.Pastebin;
-import com.example.pastebin.repository.PastebinRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
