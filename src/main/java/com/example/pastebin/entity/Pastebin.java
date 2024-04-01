@@ -10,7 +10,7 @@ import jakarta.validation.constraints.Size;
 import java.util.UUID;
 
 @Entity
-public class Paste {
+public class Pastebin {
     @Id
     private UUID id;
 
@@ -43,7 +43,7 @@ public class Paste {
     @NotBlank(message = "Field is mandatory")
     private DateStamp stamp;
 
-    public Paste(UUID id, String author, String title, Language language, String text, DateStamp stamp) {
+    public Pastebin(UUID id, String author, String title, Language language, String text, DateStamp stamp) {
         this.id = id;
         this.author = author;
         this.title = title;
@@ -52,7 +52,7 @@ public class Paste {
         this.stamp = stamp;
     }
 
-    public Paste() {
+    public Pastebin() {
 
     }
 }
